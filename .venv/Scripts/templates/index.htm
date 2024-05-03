@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    {% block styles %}
+
+        <link rel="stylesheet" href="/static/css/index.css">
+        
+    {% endblock %}
+
+</head>
+<body>
+
+    {% include 'header.htm' %}
+
+    <section class="containerAll">
+
+   
+        <div>
+
+      
+    <form method="POST" enctype="multipart/form-data" style="display: flex; gap: 1em;">
+        
+        <label for="small_size" id="labelId" class="labelStyle" style="position: relative;">
+        <button class="buttonFile" onclick="eventClick()"  type="button">choose a file<img class="iconStyle"  src="/static/icons/pic.png" alt=""></button>
+        <input class="inputStyle" id="small_size" name="fileInput" type="file">
+        
+    </label>
+
+        <button type="submit" class="btnStyle text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Submit</button>
+
+    </form>
+
+    <script>
+
+        function eventClick() {
+            console.log("clicked")
+            document.getElementById('small_size').click()
+
+        }
+
+    </script>
+   
+
+
+    {% if output_path %}
+
+    <section class="containerAll">
+        <img class="resultStyle" src="/static/uploads/bgChanged.png" alt="">
+    </section>
+
+       
+        
+    {% endif %}
+
+</div>
+</section>
+</body>
+</html>
